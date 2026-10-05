@@ -1,0 +1,49 @@
+# Global defaults applied to every file.
+defaults:
+  type: CSV
+
+  # Everything is case-insensitive by default.
+  caseSensitive: TRUE
+
+  # These selected columns are case-sensitive.
+  # All other columns remain case-insensitive.
+  caseSensitiveColumns:
+    - CREATED_BY
+    - UPDATED_BY
+
+  ignore:
+    - CREATED_DATE
+    - LOAD_TIMESTAMP
+
+
+files:
+
+  sample_10_rows_5_columns.csv:
+    type: CSV
+
+    key:
+      - ID
+
+    # Only these columns are case-sensitive.
+    # Every other column is case-insensitive.
+    caseSensitiveColumns:
+
+    ignore:
+      - CREATED_DATE
+      - LOAD_TIMESTAMP
+
+
+  transaction.csv:
+    type: CSV
+
+    key:
+      - TRANSACTION_ID
+
+    # Only TRANSACTION_ID is case-sensitive.
+    # Every other column is case-insensitive.
+    caseSensitiveColumns:
+      - TRANSACTION_ID
+
+    ignore:
+      - CREATED_DATE
+      - LOAD_TIMESTAMP
